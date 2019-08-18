@@ -5,6 +5,7 @@ from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel
 from wagtail.core.fields import RichTextField
 from wagtail.images.edit_handlers import ImageChooserPanel
 
+
 class HomePage(Page):
 
     templates = 'home/home_page.html'
