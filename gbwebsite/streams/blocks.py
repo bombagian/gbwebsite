@@ -56,3 +56,26 @@ class SimpleRichtextBlock (blocks.RichTextBlock):
         template = "streams/richtext_block.html"
         icon = "edit"
         label = "Simple RichText"
+
+
+class QuoteBlock(blocks.StructBlock):
+
+    text = blocks.TextBlock()
+    quote_author = blocks.CharBlock(blank=True, required=False, label= "Author", help_text="e.g. Leonardo da Vinci")
+    quote_source = blocks.CharBlock(blank=True, required=False, label= "Source", help_text="e.g. diary")
+
+    class Meta:
+        template = "streams/quote_block.html"
+        icon = "openquote"
+
+
+class ImageWithCaption(blocks.StructBlock):
+
+    image = ImageChooserBlock(required=True)
+    caption = blocks.CharBlock(required=False)
+    attribution = blocks.CharBlock(required=False)
+
+    class Meta:
+        template = "streams/image_with_caption.html"
+        icon = "image"
+        

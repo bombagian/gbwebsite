@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/gianfranco/anaconda3/envs/django2/bin/python",
+    "python.pythonPath": "C:\\Users\\Gianfranco\\Anaconda3\\envs\\djangoEnv\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true
