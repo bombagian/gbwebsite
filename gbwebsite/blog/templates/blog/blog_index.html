@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block content %}
+<div class="container">
+        {% if posts %}
+        {% for post in posts %}
+            <a href="{% pageurl blog %}">
+                    <div class="text">
+                        <h2 class="blog-list-title">{{ post.title }}</h2>
+                        <p>{{ post.introduction|truncatewords:15 }}</p>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+        {% endif %}
+</div>
+{% endblock content %}
