@@ -1,17 +1,25 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags %}
+
+{% load wagtailimages_tags %}
+
 {% block content %}
-<div class="container">
-        {% if posts %}
+    <div class="container">
         {% for post in posts %}
-            <a href="{% pageurl blog %}">
-                    <div class="text">
-                        <h2 class="blog-list-title">{{ post.title }}</h2>
-                        <p>{{ post.introduction|truncatewords:15 }}</p>
-                    </div>
-                </a>
-            </li>
+            <div class="row mt-5 mb-5">
+                <div class="col-sm-3">
+                    {% image post.image fill-250x250 as blog_img %}
+                    <a href="{{ post.url }}">
+                        <img src="{{ blog_img.url }}" alt="{{ blog_img.alt }}">
+                    </a>
+                </div>
+                <div class="col-sm-9">
+                    <a href="{{ post.url }}">
+                        <h2>{{ post.title }}</h2>
+                        {# @todo add a summary field to BlogDetailPage; make it a RichTextField with only Bold and Italic enabled. #}
+                        <a href="{{ post.url }}" class="btn btn-primary mt-4">Read More</a>
+                    </a>
+                </div>
+            </div>
         {% endfor %}
-        {% endif %}
-</div>
-{% endblock content %}
+    </div>
+{% endblock content %} 

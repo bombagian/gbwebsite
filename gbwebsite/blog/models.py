@@ -96,7 +96,7 @@ class BlogIndex(Page):
         context['posts'] = BlogPage.objects.descendant_of(
             self).live()#.order_by('-date_published')
         return context
-    
+
     # Returns the child BlogPage objects for this BlogPageIndex.
     # If a tag is used then it will filter the posts by tag.
     def get_posts(self, tag=None):

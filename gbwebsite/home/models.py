@@ -34,7 +34,6 @@ class HomePage(Page):
         FieldPanel('banner_subtitle'),
         ImageChooserPanel('banner_image'),
         PageChooserPanel('banner_cta'),
-
     ]
 
     class Meta:
