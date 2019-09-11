@@ -28,7 +28,7 @@ class BlogPage(Page):
     )
     # add author?
 
-    image = models.ForeignKey(
+    post_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
@@ -59,7 +59,7 @@ class BlogPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('subtitle', classname="full"),
         FieldPanel('page_intro'),
-        ImageChooserPanel('image'),
+        ImageChooserPanel('post_image'),
         StreamFieldPanel('body'),
         FieldPanel('Date published')
      ]
